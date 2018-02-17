@@ -17974,3 +17974,413 @@ Event at time 1518848995606 : TextureyellowPlayer  has been retrieved
 Event at time 1518848995610 : Player texture set
 Event at time 1518848995614 : Switching to Yellow
 Event at time 1518848995620 : On Checkpoint
+Event at time 1518849044326 : Game has Begun
+Event at time 1518849044353 : TexturebluePlayer  has been loaded
+Event at time 1518849044359 : TexturegreenPlayer  has been loaded
+Event at time 1518849044365 : TextureorangePlayer  has been loaded
+Event at time 1518849044373 : TexturepurplePlayer  has been loaded
+Event at time 1518849044380 : TextureredPlayer  has been loaded
+Event at time 1518849044386 : TextureyellowPlayer  has been loaded
+Event at time 1518849044392 : Texturehud  has been loaded
+Event at time 1518849044397 : All static textures loaded
+Event at time 1518849044444 : Sprite Batch Created
+Event at time 1518849044455 : Main Camera Created
+Event at time 1518849044460 : Hud Camera Created
+Event at time 1518849044471 : State with id 0is being pushed
+Event at time 1518849044477 : Menu State Loaded
+Event at time 1518849044613 : Music Started
+Event at time 1518849044817 : Successfully loaded images
+Event at time 1518849044888 : Menu Assessts loaded
+Event at time 1518849044892 : Menu State Loaded
+Event at time 1518849044897 : Game State Manager Created
+Event at time 1518849045784 : Loading Level Select
+Event at time 1518849045791 : State with id 1is being pushed
+Event at time 1518849045799 : Level Select State State Loaded
+Event at time 1518849046364 : Level Select Sprites have been loaded
+Event at time 1518849046374 : Enter Pressed
+Event at time 1518849047482 : Up Clicked
+Event at time 1518849047636 : Up Clicked
+Event at time 1518849047792 : Up Clicked
+Event at time 1518849047942 : Up Clicked
+Event at time 1518849048631 : Up Clicked
+Event at time 1518849048915 : Enter Clicked
+Event at time 1518849048923 : Loading level: level5
+Event at time 1518849048931 : State with id 123is being pushed
+Event at time 1518849048941 : Play State Loaded (level5)
+Event at time 1518849048998 : Start Position Set
+Event at time 1518849049052 : Player Recreated with new texture
+Event at time 1518849049058 : Level assessts loaded
+Event at time 1518849049203 : Environment Created
+Event at time 1518849049214 : Pressure Plates Created
+Event at time 1518849049221 : Door Created
+Event at time 1518849049225 : Checkpoints Created
+Event at time 1518849049230 : Level is level5
+Event at time 1518849049235 : Texturehud  has been retrieved
+Event at time 1518849049240 : Hud Created
+Event at time 1518849049246 : Hud Created
+Event at time 1518849049264 : TextureyellowPlayer  has been retrieved
+Event at time 1518849049270 : Player texture set
+Event at time 1518849049276 : Switching to Yellow
+Event at time 1518849049285 : On Checkpoint
+Event at time 1518849052134 : Player Jumped
+Event at time 1518849053717 : Player Jumped
+Event at time 1518849055547 : Player Jumped
+Event at time 1518849056797 : Player Jumped
+Event at time 1518849058349 : Player Jumped
+Event at time 1518849060480 : Player Jumped
+Event at time 1518849064263 : Player Jumped
+Event at time 1518849065998 : Player Jumped
+Event at time 1518849067381 : Player Jumped
+Event at time 1518849068863 : Player Jumped
+Event at time 1518849070481 : Player Jumped
+Event at time 1518849073196 : TextureyellowPlayer  has been retrieved
+Event at time 1518849073203 : Player texture set
+Event at time 1518849073208 : Switching to Yellow
+Event at time 1518849073219 : TextureyellowPlayer  has been retrieved
+Event at time 1518849073229 : Player texture set
+Event at time 1518849073233 : Switching to Yellow
+Event at time 1518849073237 : TextureyellowPlayer  has been retrieved
+Event at time 1518849073241 : Player texture set
+Event at time 1518849073248 : Switching to Yellow
+Event at time 1518849073728 : TextureyellowPlayer  has been retrieved
+Event at time 1518849073735 : Player texture set
+Event at time 1518849073746 : Switching to Yellow
+Event at time 1518849073779 : TextureyellowPlayer  has been retrieved
+Event at time 1518849073787 : Player texture set
+Event at time 1518849073796 : Switching to Yellow
+Event at time 1518849074062 : On Checkpoint
+Event at time 1518849074079 : On Checkpoint
+Event at time 1518849074096 : On Checkpoint
+Event at time 1518849074645 : TextureyellowPlayer  has been retrieved
+Event at time 1518849074653 : Player texture set
+Event at time 1518849074662 : Switching to Yellow
+Event at time 1518849074861 : TextureyellowPlayer  has been retrieved
+Event at time 1518849074867 : Player texture set
+Event at time 1518849074878 : Switching to Yellow
+Event at time 1518849074889 : TextureyellowPlayer  has been retrieved
+Event at time 1518849074896 : Player texture set
+Event at time 1518849074903 : Switching to Yellow
+Event at time 1518849074961 : TextureyellowPlayer  has been retrieved
+Event at time 1518849074967 : Player texture set
+Event at time 1518849074974 : Switching to Yellow
+Event at time 1518849076261 : TextureyellowPlayer  has been retrieved
+Event at time 1518849076268 : Player texture set
+Event at time 1518849076275 : Switching to Yellow
+Event at time 1518849076296 : TextureyellowPlayer  has been retrieved
+Event at time 1518849076304 : Player texture set
+Event at time 1518849076312 : Switching to Yellow
+Event at time 1518849076645 : Player Jumped
+Event at time 1518849076662 : TextureyellowPlayer  has been retrieved
+Event at time 1518849076669 : Player texture set
+Event at time 1518849076678 : Switching to Yellow
+Event at time 1518849077630 : Player Jumped
+Event at time 1518849078694 : TexturebluePlayer  has been retrieved
+Event at time 1518849078704 : Player texture set
+Event at time 1518849078710 : Switching to Blue
+Event at time 1518849078718 : TexturebluePlayer  has been retrieved
+Event at time 1518849078727 : Player texture set
+Event at time 1518849078736 : Switching to Blue
+Event at time 1518849078741 : TexturebluePlayer  has been retrieved
+Event at time 1518849078750 : Player texture set
+Event at time 1518849078754 : Switching to Blue
+Event at time 1518849079096 : Player Jumped
+Event at time 1518849079110 : TexturebluePlayer  has been retrieved
+Event at time 1518849079118 : Player texture set
+Event at time 1518849079127 : Switching to Blue
+Event at time 1518849083496 : Player Jumped
+Event at time 1518849084848 : Player Jumped
+Event at time 1518849088377 : Player Jumped
+Event at time 1518849089428 : Player Jumped
+Event at time 1518849091143 : Player Jumped
+Event at time 1518849093128 : Player Jumped
+Event at time 1518849094660 : On Checkpoint
+Event at time 1518849094676 : On Checkpoint
+Event at time 1518849094693 : On Checkpoint
+Event at time 1518849097243 : Loss of Life
+Event at time 1518849097250 : Player Recreated with new texture
+Event at time 1518849097260 : On Checkpoint
+Event at time 1518849097959 : Player Jumped
+Event at time 1518849098009 : On Checkpoint
+Event at time 1518849102127 : Player Jumped
+Event at time 1518849103643 : Player Jumped
+Event at time 1518849109025 : Player Jumped
+Event at time 1518849110224 : TextureredPlayer  has been retrieved
+Event at time 1518849110234 : Player texture set
+Event at time 1518849110244 : Switching to Red
+Event at time 1518849110255 : TextureredPlayer  has been retrieved
+Event at time 1518849110262 : Player texture set
+Event at time 1518849110269 : Switching to Red
+Event at time 1518849110526 : TextureredPlayer  has been retrieved
+Event at time 1518849110534 : Player texture set
+Event at time 1518849110545 : Switching to Red
+Event at time 1518849110741 : TextureredPlayer  has been retrieved
+Event at time 1518849110748 : Player texture set
+Event at time 1518849110754 : Switching to Red
+Event at time 1518849110766 : TextureredPlayer  has been retrieved
+Event at time 1518849110774 : Player texture set
+Event at time 1518849110778 : Switching to Red
+Event at time 1518849110842 : TextureredPlayer  has been retrieved
+Event at time 1518849110850 : Player texture set
+Event at time 1518849110859 : Switching to Red
+Event at time 1518849110957 : On Checkpoint
+Event at time 1518849110973 : On Checkpoint
+Event at time 1518849110993 : On Checkpoint
+Event at time 1518849112558 : TextureredPlayer  has been retrieved
+Event at time 1518849112568 : Player texture set
+Event at time 1518849112580 : Switching to Red
+Event at time 1518849112591 : TextureredPlayer  has been retrieved
+Event at time 1518849112599 : Player texture set
+Event at time 1518849112608 : Switching to Red
+Event at time 1518849114892 : TextureredPlayer  has been retrieved
+Event at time 1518849114901 : Player texture set
+Event at time 1518849114905 : Switching to Red
+Event at time 1518849115090 : On Checkpoint
+Event at time 1518849115108 : On Checkpoint
+Event at time 1518849115307 : On Checkpoint
+Event at time 1518849116073 : TextureredPlayer  has been retrieved
+Event at time 1518849116078 : Player texture set
+Event at time 1518849116087 : Switching to Red
+Event at time 1518849116101 : TextureredPlayer  has been retrieved
+Event at time 1518849116106 : Player texture set
+Event at time 1518849116113 : Switching to Red
+Event at time 1518849117374 : TextureredPlayer  has been retrieved
+Event at time 1518849117381 : Player texture set
+Event at time 1518849117388 : Switching to Red
+Event at time 1518849117402 : TextureredPlayer  has been retrieved
+Event at time 1518849117409 : Player texture set
+Event at time 1518849117414 : Switching to Red
+Event at time 1518849118626 : TextureredPlayer  has been retrieved
+Event at time 1518849118636 : Player texture set
+Event at time 1518849118641 : Switching to Red
+Event at time 1518849118650 : TextureredPlayer  has been retrieved
+Event at time 1518849118658 : Player texture set
+Event at time 1518849118666 : Switching to Red
+Event at time 1518849122291 : Player Jumped
+Event at time 1518849123291 : Player Jumped
+Event at time 1518849126706 : Player Jumped
+Event at time 1518849128074 : Player Jumped
+Event at time 1518849129658 : Player Jumped
+Event at time 1518849130606 : Player Jumped
+Event at time 1518849133207 : Player Jumped
+Event at time 1518849135589 : Loss of Life
+Event at time 1518849135601 : Player Recreated with new texture
+Event at time 1518849135611 : On Checkpoint
+Event at time 1518849136372 : TextureredPlayer  has been retrieved
+Event at time 1518849136378 : Player texture set
+Event at time 1518849136388 : Switching to Red
+Event at time 1518849136439 : TextureredPlayer  has been retrieved
+Event at time 1518849136444 : Player texture set
+Event at time 1518849136452 : Switching to Red
+Event at time 1518849136788 : TextureredPlayer  has been retrieved
+Event at time 1518849136795 : Player texture set
+Event at time 1518849136800 : Switching to Red
+Event at time 1518849136809 : TextureredPlayer  has been retrieved
+Event at time 1518849136818 : Player texture set
+Event at time 1518849136826 : Switching to Red
+Event at time 1518849137005 : TextureredPlayer  has been retrieved
+Event at time 1518849137012 : Player texture set
+Event at time 1518849137022 : Switching to Red
+Event at time 1518849137032 : TextureredPlayer  has been retrieved
+Event at time 1518849137039 : Player texture set
+Event at time 1518849137044 : Switching to Red
+Event at time 1518849138575 : Player Jumped
+Event at time 1518849139740 : Player Jumped
+Event at time 1518849141106 : Player Jumped
+Event at time 1518849142355 : Player Jumped
+Event at time 1518849143788 : Level Over
+Event at time 1518849143798 : Previous State Removed
+Event at time 1518849143806 : State with id 2is being pushed
+Event at time 1518849143814 : Level Select State State Loaded
+Event at time 1518849143819 : USER HAS WON GAME!!!!!!!!!!!
+Event at time 1518849150021 : Returning to Main Screen
+Event at time 1518849150027 : Previous State Removed
+Event at time 1518849150720 : Enter Clicked
+Event at time 1518849150725 : Loading level: level5
+Event at time 1518849150731 : State with id 123is being pushed
+Event at time 1518849150742 : Play State Loaded (level5)
+Event at time 1518849150756 : Start Position Set
+Event at time 1518849150811 : Player Recreated with new texture
+Event at time 1518849150816 : Level assessts loaded
+Event at time 1518849150914 : Environment Created
+Event at time 1518849150922 : Pressure Plates Created
+Event at time 1518849150927 : Door Created
+Event at time 1518849150939 : Checkpoints Created
+Event at time 1518849150944 : Level is level5
+Event at time 1518849150949 : Texturehud  has been retrieved
+Event at time 1518849150956 : Hud Created
+Event at time 1518849150961 : Hud Created
+Event at time 1518849153854 : On Checkpoint
+Event at time 1518849153872 : TextureyellowPlayer  has been retrieved
+Event at time 1518849153882 : Player texture set
+Event at time 1518849153890 : Switching to Yellow
+Event at time 1518849153899 : TextureyellowPlayer  has been retrieved
+Event at time 1518849153907 : Player texture set
+Event at time 1518849153912 : Switching to Yellow
+Event at time 1518849154188 : On Checkpoint
+Event at time 1518849154206 : On Checkpoint
+Event at time 1518849154237 : On Checkpoint
+Event at time 1518849154986 : TextureyellowPlayer  has been retrieved
+Event at time 1518849154994 : Player texture set
+Event at time 1518849155000 : Switching to Yellow
+Event at time 1518849155186 : TextureyellowPlayer  has been retrieved
+Event at time 1518849155191 : Player texture set
+Event at time 1518849155199 : Switching to Yellow
+Event at time 1518849155387 : TextureyellowPlayer  has been retrieved
+Event at time 1518849155398 : Player texture set
+Event at time 1518849155408 : Switching to Yellow
+Event at time 1518849155413 : TextureyellowPlayer  has been retrieved
+Event at time 1518849155417 : Player texture set
+Event at time 1518849155423 : Switching to Yellow
+Event at time 1518849155486 : TextureyellowPlayer  has been retrieved
+Event at time 1518849155492 : Player texture set
+Event at time 1518849155499 : Switching to Yellow
+Event at time 1518849156019 : TextureyellowPlayer  has been retrieved
+Event at time 1518849156027 : Player texture set
+Event at time 1518849156032 : Switching to Yellow
+Event at time 1518849156055 : TextureyellowPlayer  has been retrieved
+Event at time 1518849156060 : Player texture set
+Event at time 1518849156066 : Switching to Yellow
+Event at time 1518849156205 : TextureyellowPlayer  has been retrieved
+Event at time 1518849156211 : Player texture set
+Event at time 1518849156219 : Switching to Yellow
+Event at time 1518849157269 : Player Jumped
+Event at time 1518849160119 : Loss of Life
+Event at time 1518849160125 : Player Recreated with new texture
+Event at time 1518849160137 : TextureyellowPlayer  has been retrieved
+Event at time 1518849160146 : Player texture set
+Event at time 1518849160152 : Switching to Yellow
+Event at time 1518849160159 : On Checkpoint
+Event at time 1518849160803 : TextureyellowPlayer  has been retrieved
+Event at time 1518849160814 : Player texture set
+Event at time 1518849160821 : Switching to Yellow
+Event at time 1518849160853 : TextureyellowPlayer  has been retrieved
+Event at time 1518849160861 : Player texture set
+Event at time 1518849160870 : Switching to Yellow
+Event at time 1518849161002 : TextureyellowPlayer  has been retrieved
+Event at time 1518849161012 : Player texture set
+Event at time 1518849161017 : Switching to Yellow
+Event at time 1518849161071 : Player Jumped
+Event at time 1518849161085 : TextureyellowPlayer  has been retrieved
+Event at time 1518849161093 : Player texture set
+Event at time 1518849161100 : Switching to Yellow
+Event at time 1518849162071 : Player Jumped
+Event at time 1518849163137 : TexturebluePlayer  has been retrieved
+Event at time 1518849163143 : Player texture set
+Event at time 1518849163151 : Switching to Blue
+Event at time 1518849163161 : TexturebluePlayer  has been retrieved
+Event at time 1518849163169 : Player texture set
+Event at time 1518849163177 : Switching to Blue
+Event at time 1518849163186 : TexturebluePlayer  has been retrieved
+Event at time 1518849163190 : Player texture set
+Event at time 1518849163194 : Switching to Blue
+Event at time 1518849163386 : TexturebluePlayer  has been retrieved
+Event at time 1518849163391 : Player texture set
+Event at time 1518849163399 : Switching to Blue
+Event at time 1518849166170 : TextureorangePlayer  has been retrieved
+Event at time 1518849166178 : Player texture set
+Event at time 1518849166186 : Switching to Orange
+Event at time 1518849167370 : Loss of Life
+Event at time 1518849167379 : Player Recreated with new texture
+Event at time 1518849167388 : TextureyellowPlayer  has been retrieved
+Event at time 1518849167394 : Player texture set
+Event at time 1518849167403 : Switching to Yellow
+Event at time 1518849167409 : On Checkpoint
+Event at time 1518849168187 : TextureyellowPlayer  has been retrieved
+Event at time 1518849168193 : Player texture set
+Event at time 1518849168200 : Switching to Yellow
+Event at time 1518849168236 : TextureyellowPlayer  has been retrieved
+Event at time 1518849168246 : Player texture set
+Event at time 1518849168255 : Switching to Yellow
+Event at time 1518849168385 : TextureyellowPlayer  has been retrieved
+Event at time 1518849168392 : Player texture set
+Event at time 1518849168397 : Switching to Yellow
+Event at time 1518849168871 : Player Jumped
+Event at time 1518849168879 : TextureyellowPlayer  has been retrieved
+Event at time 1518849168886 : Player texture set
+Event at time 1518849168892 : Switching to Yellow
+Event at time 1518849169836 : Player Jumped
+Event at time 1518849170902 : TexturebluePlayer  has been retrieved
+Event at time 1518849170909 : Player texture set
+Event at time 1518849170914 : Switching to Blue
+Event at time 1518849170924 : TexturebluePlayer  has been retrieved
+Event at time 1518849170933 : Player texture set
+Event at time 1518849170940 : Switching to Blue
+Event at time 1518849170946 : TexturebluePlayer  has been retrieved
+Event at time 1518849170951 : Player texture set
+Event at time 1518849170957 : Switching to Blue
+Event at time 1518849171052 : TexturebluePlayer  has been retrieved
+Event at time 1518849171059 : Player texture set
+Event at time 1518849171066 : Switching to Blue
+Event at time 1518849171353 : TexturebluePlayer  has been retrieved
+Event at time 1518849171362 : Player texture set
+Event at time 1518849171370 : Switching to Blue
+Event at time 1518849171379 : TexturebluePlayer  has been retrieved
+Event at time 1518849171388 : Player texture set
+Event at time 1518849171396 : Switching to Blue
+Event at time 1518849171468 : TexturebluePlayer  has been retrieved
+Event at time 1518849171478 : Player texture set
+Event at time 1518849171483 : Switching to Blue
+Event at time 1518849171652 : Player Jumped
+Event at time 1518849171668 : TexturebluePlayer  has been retrieved
+Event at time 1518849171677 : Player texture set
+Event at time 1518849171682 : Switching to Blue
+Event at time 1518849174651 : Loss of Life
+Event at time 1518849174658 : Player Recreated with new texture
+Event at time 1518849174665 : 0 lives left
+Event at time 1518849174677 : Previous State Removed
+Event at time 1518849174683 : State with id 123is being pushed
+Event at time 1518849174689 : Play State Loaded (level5)
+Event at time 1518849174700 : Start Position Set
+Event at time 1518849174768 : Player Recreated with new texture
+Event at time 1518849174775 : Level assessts loaded
+Event at time 1518849174847 : Environment Created
+Event at time 1518849174856 : Pressure Plates Created
+Event at time 1518849174862 : Door Created
+Event at time 1518849174871 : Checkpoints Created
+Event at time 1518849174878 : Level is level5
+Event at time 1518849174885 : Texturehud  has been retrieved
+Event at time 1518849174890 : Hud Created
+Event at time 1518849174894 : Hud Created
+Event at time 1518849178484 : Loss of Life
+Event at time 1518849178491 : Player Recreated with new texture
+Event at time 1518849181101 : Loss of Life
+Event at time 1518849181113 : Player Recreated with new texture
+Event at time 1518849183600 : On Checkpoint
+Event at time 1518849183633 : On Checkpoint
+Event at time 1518849183699 : TextureyellowPlayer  has been retrieved
+Event at time 1518849183709 : Player texture set
+Event at time 1518849183714 : Switching to Yellow
+Event at time 1518849183767 : TextureyellowPlayer  has been retrieved
+Event at time 1518849183777 : Player texture set
+Event at time 1518849183782 : Switching to Yellow
+Event at time 1518849184251 : TextureyellowPlayer  has been retrieved
+Event at time 1518849184258 : Player texture set
+Event at time 1518849184265 : Switching to Yellow
+Event at time 1518849184420 : Player Jumped
+Event at time 1518849184434 : TextureyellowPlayer  has been retrieved
+Event at time 1518849184440 : Player texture set
+Event at time 1518849184445 : Switching to Yellow
+Event at time 1518849187017 : Player Jumped
+Event at time 1518849188633 : TextureorangePlayer  has been retrieved
+Event at time 1518849188641 : Player texture set
+Event at time 1518849188647 : Switching to Orange
+Event at time 1518849188658 : TextureorangePlayer  has been retrieved
+Event at time 1518849188666 : Player texture set
+Event at time 1518849188672 : Switching to Orange
+Event at time 1518849189850 : Loss of Life
+Event at time 1518849189858 : Player Recreated with new texture
+Event at time 1518849189865 : 0 lives left
+Event at time 1518849189874 : Previous State Removed
+Event at time 1518849189879 : State with id 123is being pushed
+Event at time 1518849189887 : Play State Loaded (level5)
+Event at time 1518849189898 : Start Position Set
+Event at time 1518849189960 : Player Recreated with new texture
+Event at time 1518849189964 : Level assessts loaded
+Event at time 1518849190026 : Environment Created
+Event at time 1518849190032 : Pressure Plates Created
+Event at time 1518849190040 : Door Created
+Event at time 1518849190046 : Checkpoints Created
+Event at time 1518849190053 : Level is level5
+Event at time 1518849190057 : Texturehud  has been retrieved
+Event at time 1518849190063 : Hud Created
+Event at time 1518849190072 : Hud Created
