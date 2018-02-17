@@ -11,6 +11,7 @@ import handlers.Content;
 import handlers.GameStateManager;
 import handlers.MyInput;
 import handlers.MyInputProcessor;
+import handlers.Logger;
 
 public class Game extends ApplicationAdapter {
 
@@ -30,6 +31,7 @@ public class Game extends ApplicationAdapter {
 	private GameStateManager gsm;
 	
 	public static Content res;
+	Logger logger;
 	
 	public SpriteBatch getSpriteBatch() {
 		return sb;
@@ -46,7 +48,7 @@ public class Game extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-		
+		logger.writeEvent("Game has Begun");
 		Gdx.input.setInputProcessor(new MyInputProcessor());
 		res = new Content();
 		res.loadTexture("images/playerImages/blue.png", "bluePlayer");
@@ -56,18 +58,21 @@ public class Game extends ApplicationAdapter {
 		res.loadTexture("images/playerImages/red.png", "redPlayer");
 		res.loadTexture("images/playerImages/yellow.png", "yellowPlayer");
 		res.loadTexture("images/heart.png", "hud");
-		
+		logger.writeEvent("All static textures loaded");
 		
 		
 		sb = new SpriteBatch();
+		logger.writeEvent("Sprite Batch Created");
 		
 		mainCamera = new OrthographicCamera();
 		mainCamera.setToOrtho(false, width, height);
-		
+		logger.writeEvent("Main Camera Created");
 		hudCamera = new OrthographicCamera();
 		hudCamera.setToOrtho(false, width, height);
-		
+		logger.writeEvent("Hud Camera Created");
 		gsm = new GameStateManager(this);
+		logger.writeEvent("Game State Manager Created");
+		
 	}
 
 	@Override
@@ -81,7 +86,9 @@ public class Game extends ApplicationAdapter {
 		}
 		
 	}
-	
+	public Game() {
+		logger = new Logger();
+	}
 	@Override
 	public void dispose () {
 		

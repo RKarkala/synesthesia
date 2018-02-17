@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset name="tileset" tilewidth="48" tileheight="48" tilecount="20" columns="0">
+<tileset name="tileset" tilewidth="308" tileheight="229" tilecount="30" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="32" height="32" source="mapImages/bblock.png"/>
@@ -60,5 +60,35 @@
  </tile>
  <tile id="19">
   <image width="24" height="33" source="mapImages/yellow.png"/>
+ </tile>
+ <tile id="20">
+  <image width="125" height="93" source="mapImages/blocks.png"/>
+ </tile>
+ <tile id="21">
+  <image width="125" height="93" source="mapImages/checkpoint.png"/>
+ </tile>
+ <tile id="22">
+  <image width="125" height="93" source="mapImages/color.png"/>
+ </tile>
+ <tile id="23">
+  <image width="125" height="93" source="mapImages/help.png"/>
+ </tile>
+ <tile id="24">
+  <image width="125" height="93" source="mapImages/jump.png"/>
+ </tile>
+ <tile id="25">
+  <image width="125" height="93" source="mapImages/left.png"/>
+ </tile>
+ <tile id="26">
+  <image width="125" height="93" source="mapImages/right.png"/>
+ </tile>
+ <tile id="27">
+  <image width="125" height="93" source="mapImages/shortcuts.png"/>
+ </tile>
+ <tile id="28">
+  <image width="125" height="93" source="mapImages/white blocks.png"/>
+ </tile>
+ <tile id="29">
+  <image width="125" height="93" source="mapImages/white door.png"/>
  </tile>
 </tileset>

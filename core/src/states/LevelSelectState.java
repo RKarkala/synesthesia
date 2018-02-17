@@ -13,6 +13,7 @@ import de.tomgrill.gdxdialogs.core.GDXDialogsSystem;
 import de.tomgrill.gdxdialogs.core.dialogs.GDXButtonDialog;
 import de.tomgrill.gdxdialogs.core.listener.ButtonClickListener;
 import handlers.GameStateManager;
+import handlers.Logger;
 import handlers.MyInput;
 
 public class LevelSelectState extends GameState {
@@ -41,6 +42,8 @@ public class LevelSelectState extends GameState {
 	private Texture level4notPressed;
 	private Texture level5notPressed;
 	private Texture backnotPressed;
+	
+	Logger logger = new Logger();
 
 	public LevelSelectState(GameStateManager gsm) {
 		super(gsm);
@@ -64,6 +67,8 @@ public class LevelSelectState extends GameState {
 
 		background = new Texture("images/background.jpg");
 		title = new Texture("images/levelSelectImages/title.png");
+		
+		logger.writeEvent("Level Select Sprites have been loaded");
 
 	}
 
@@ -73,16 +78,20 @@ public class LevelSelectState extends GameState {
 			currentItem--;
 			currentItem += 7;
 			currentItem %= 7;
+			logger.writeEvent("Down Clicked");
 		}
 		if (MyInput.isPressed(MyInput.BUTTON5)) {
 			currentItem++;
 			currentItem += 7;
 			currentItem %= 7;
+			logger.writeEvent("Up Clicked");
 		}
 		if (MyInput.isPressed(MyInput.BUTTON6)) {
+			logger.writeEvent("Enter Clicked");
 			select();
 		}
 		if (MyInput.isPressed(MyInput.BUTTON7)) {
+			logger.writeEvent("Escape Pressed");
 			gsm.popState();
 		}
 
@@ -161,12 +170,14 @@ public class LevelSelectState extends GameState {
 			FileHandle handle = Gdx.files.internal("allowed.txt");
 			String allowed = handle.readString();
 			if (allowed.contains(target)) {
+				logger.writeEvent("Loading level: " + target);
 				gsm.pushState(GameStateManager.play, target);
 			} else {
 				GDXDialogs dialogs = GDXDialogsSystem.install();
 				GDXButtonDialog bDialog = dialogs.newDialog(GDXButtonDialog.class);
 				bDialog.setTitle("Not Unlocked");
 				bDialog.setMessage("Please Complete the Previous Levels");
+				logger.writeEvent("Attempted to access unauthorized level");
 
 				bDialog.setClickListener(new ButtonClickListener() {
 
@@ -183,6 +194,7 @@ public class LevelSelectState extends GameState {
 				bDialog.build().show();
 			}
 		} else {
+			logger.writeEvent("Current State Removed");
 			gsm.popState();
 		}
 

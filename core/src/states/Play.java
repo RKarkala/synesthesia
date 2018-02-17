@@ -37,6 +37,7 @@ import entities.HUD;
 import entities.Player;
 import handlers.B2DVars;
 import handlers.GameStateManager;
+import handlers.Logger;
 import handlers.MyContactListener;
 import handlers.MyInput;
 import main.Game;
@@ -55,13 +56,12 @@ public class Play extends GameState {
 	private int tileSize;
 	private Player player;
 	private final int maxSpeed = 5;
-	private boolean keyPressed = false;
+
 
 	private float startX = 0;
 	private float startY = 0;
 
 	private boolean isPaused = false;
-	private boolean restart = false;
 
 	private boolean first = true;
 	private int lives = 3;
@@ -71,6 +71,7 @@ public class Play extends GameState {
 	private HUD hud;
 	String level;
 	Texture background;
+	Logger logger = new Logger();
 
 	public Play(GameStateManager gsm, String level) {
 
@@ -94,23 +95,34 @@ public class Play extends GameState {
 		if (first) {
 			startX = Float.parseFloat(parts[0]);
 			startY = Float.parseFloat(parts[1]);
+			if(startX != Float.parseFloat(parts[2])) {
+				startX = Float.parseFloat(parts[2]);
+				startY = Float.parseFloat(parts[3]);
+			}
 			first = false;
 		}
+		logger.writeEvent("Start Position Set");
 		background = new Texture("images/background.jpg");
 		background.setWrap(TextureWrap.Repeat, TextureWrap.Repeat);
 		this.level = level;
 
 		createPlayer(B2DVars.BIT_YELLOW, new Texture("images/playerImages/yellow.png"));
+		logger.writeEvent("Level assessts loaded");
 		createTiles();
+		logger.writeEvent("Environment Created");
 		createPlates();
+		logger.writeEvent("Pressure Plates Created");
 		createDoor();
+		logger.writeEvent("Door Created");
 		createCheckpoints();
+		logger.writeEvent("Checkpoints Created");
 
 		b2dcam = new OrthographicCamera();
 		b2dcam.setToOrtho(false, Game.width / PPM, Game.height / PPM);
 
-		System.out.println("Var is " + this.level);
+		logger.writeEvent("Level is " + this.level);
 		hud = new HUD(player);
+		logger.writeEvent("Hud Created");
 
 	}
 
@@ -122,24 +134,25 @@ public class Play extends GameState {
 				Sound sound = Gdx.audio.newSound(Gdx.files.internal("sfx/jump.wav"));
 				player.getBody().applyForceToCenter(new Vector2(0, 750), true);
 				sound.play(sfxLevel);
+				logger.writeEvent("Player Jumped");
 
 			}
 		}
 		if (MyInput.isDown(MyInput.BUTTON1) && Math.abs(player.getBody().getLinearVelocity().x) < maxSpeed) {
 			player.getBody().applyForceToCenter(new Vector2(-6, 0), true);
-			keyPressed = true;
+			logger.writeEvent("Player Moving Left");
+		
 
 		}
 		if (MyInput.isDown(MyInput.BUTTON2) && Math.abs(player.getBody().getLinearVelocity().x) < maxSpeed) {
 			player.getBody().applyForceToCenter(new Vector2(6, 0), true);
-			keyPressed = true;
+			logger.writeEvent("Player Moving Right");
+		
 
-		}
-		if (!MyInput.isDown(MyInput.BUTTON2) && !MyInput.isDown(MyInput.BUTTON1) && !MyInput.isDown(MyInput.BUTTON3)) {
-			keyPressed = false;
 		}
 		if (MyInput.isPressed(MyInput.BUTTON7)) {
 			isPaused = true;
+			logger.writeEvent("Game Paused");
 			GDXDialogs dialogs = GDXDialogsSystem.install();
 			GDXButtonDialog bDialog = dialogs.newDialog(GDXButtonDialog.class);
 			bDialog.setTitle("Are You Sure?");
@@ -149,10 +162,12 @@ public class Play extends GameState {
 				public void click(int button) {
 					if (button == 0) {
 						isPaused = false;
+						logger.writeEvent("Game Resumed");
 					}
 					if (button == 1) {
 						isPaused = false;
 						gsm.popState();
+						logger.writeEvent("State popped");
 					}
 				}
 			});
@@ -173,38 +188,44 @@ public class Play extends GameState {
 			short to = B2DVars.BIT_BLUE;
 			switchBlocks(cur, to, "bluePlayer");
 			cl.blueContact = 0;
+			logger.writeEvent("Switching to Blue");
 		} else if (cl.touchedGreen()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
 			short to = B2DVars.BIT_GREEN;
 			switchBlocks(cur, to, "greenPlayer");
 			cl.greenContact = 0;
+			logger.writeEvent("Switching to Green");
 		} else if (cl.touchedOrange()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
 			short to = B2DVars.BIT_ORANGE;
 			switchBlocks(cur, to, "orangePlayer");
+			logger.writeEvent("Switching to Orange");
 			cl.orangeContact = 0;
 		} else if (cl.touchedPurple()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
 			short to = B2DVars.BIT_PURPLE;
 			switchBlocks(cur, to, "purplePlayer");
+			logger.writeEvent("Switching to Purple");
 			cl.purpleContact = 0;
 		} else if (cl.touchedRed()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
 			short to = B2DVars.BIT_RED;
-			switchBlocks(cur, to, "redPlayer");
+			logger.writeEvent("Switching to Red");
 			cl.redContact = 0;
 		} else if (cl.touchedYellow()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
 			short to = B2DVars.BIT_YELLOW;
 			switchBlocks(cur, to, "yellowPlayer");
+			logger.writeEvent("Switching to Yellow");
 			cl.yellowContact = 0;
 		}
 		if (cl.onCheckpoint()) {
+			logger.writeEvent("On Checkpoint");
 			float x = player.getBody().getPosition().x;
 			float y = player.getBody().getPosition().y;
 			System.out.println("Original Respawn - " + x + " " + y);
@@ -221,6 +242,7 @@ public class Play extends GameState {
 			world.step(dt, 8, 3);
 		}
 		if (cl.isOver()) {
+			logger.writeEvent("Level Over");
 			FileHandle handle = Gdx.files.local("maps/" + level + ".txt");
 			String[] vals = handle.readString().split("\n");
 			float orix = Float.parseFloat(vals[0]);
@@ -241,10 +263,12 @@ public class Play extends GameState {
 				}
 				
 				
+			}else {
+				gsm.setState(GameStateManager.end, "");
 			}
 		}
 		if (player.getBody().getPosition().y < -3) {
-			System.out.println("Loss of a life");
+			logger.writeEvent("Loss of Life");
 			lives--;
 			FileHandle handle = Gdx.files.local("maps/" + level + ".txt");
 			String[] vals = handle.readString().split("\n");
@@ -262,6 +286,7 @@ public class Play extends GameState {
 			}
 		}
 		if (lives == 0) {
+			logger.writeEvent("0 lives left");
 			FileHandle handle = Gdx.files.local("maps/" + level + ".txt");
 			String[] vals = handle.readString().split("\n");
 			float x = Float.parseFloat(vals[0]);
@@ -270,14 +295,7 @@ public class Play extends GameState {
 			gsm.setState(GameStateManager.play, level);
 		}
 
-		if (keyPressed) {
-			player.update(dt);
-		} else {
-			if (player.isAnimationFinished() == false) {
-				player.update(dt);
 
-			}
-		}
 
 	}
 
@@ -332,14 +350,14 @@ public class Play extends GameState {
 		bdef.position.set(startX / PPM, startY / PPM);
 		bdef.type = BodyType.DynamicBody;
 		Body body = world.createBody(bdef);
-		shape.setAsBox(14 / PPM, 14 / PPM);
+		shape.setAsBox(15 / PPM, 15 / PPM);
 		fdef.shape = shape;
 		fdef.filter.categoryBits = B2DVars.BIT_PLAYER;
 		fdef.filter.maskBits = (short) (bits | 1);
 		body.createFixture(fdef).setUserData("Box");
 
 		// Foot Sensor
-		shape.setAsBox(8 / PPM, 2 / PPM, new Vector2(0, -15 / PPM), 0);
+		shape.setAsBox(13 / PPM, 2 / PPM, new Vector2(0, -15 / PPM), 0);
 		fdef.shape = shape;
 		fdef.filter.categoryBits = B2DVars.BIT_PLAYER;
 		fdef.filter.maskBits = (short) (bits | 1);

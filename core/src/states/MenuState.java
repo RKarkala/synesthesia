@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
+import handlers.Logger;
 
 import de.tomgrill.gdxdialogs.core.GDXDialogs;
 import de.tomgrill.gdxdialogs.core.GDXDialogsSystem;
@@ -25,6 +26,7 @@ public class MenuState extends GameState {
 	private SpriteBatch sb;
 	private BitmapFont titleFont;
 	private BitmapFont font;
+	Logger logger = new Logger();
 
 	// private final String title = "Synesthesia";
 
@@ -46,6 +48,7 @@ public class MenuState extends GameState {
 		super(gsm);
 		backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("music/background.ogg"));
 		backgroundMusic.setLooping(true);
+		
 		try {
 			musicVolume = preferences.getFloat("bg");
 		}catch(Exception e) {
@@ -53,27 +56,19 @@ public class MenuState extends GameState {
 		}
 		backgroundMusic.setVolume(musicVolume);
 		backgroundMusic.play();
+		logger.writeEvent("Music Started");
 
 		sb = new SpriteBatch();
-		/*
-		 * font = new BitmapFont(); font.setColor(Color.BLUE); menuItems = new String[]
-		 * { "Play", "Quit" }; FreeTypeFontGenerator titleGenerator = new
-		 * FreeTypeFontGenerator(Gdx.files.internal("titleFont.ttf"));
-		 * FreeTypeFontParameter titleParamater = new FreeTypeFontParameter();
-		 * titleParamater.size = 75; titleParamater.color = Color.WHITE; titleFont =
-		 * titleGenerator.generateFont(titleParamater); titleGenerator = new
-		 * FreeTypeFontGenerator(Gdx.files.internal("textFont.ttf"));
-		 * FreeTypeFontParameter textParameter = new FreeTypeFontParameter();
-		 * textParameter.size = 45; textParameter.color = Color.WHITE; font =
-		 * titleGenerator.generateFont(textParameter); titleGenerator.dispose();
-		 */
+		logger = new Logger();
 		background = new Texture("images/background.jpg");
 		selectedPlay = new Texture("images/playselected.png");
 		unSelectedPlay = new Texture("images/playnotselected.png");
 		selectedOption = new Texture("images/optionselected.png");
 		unSelectedOption = new Texture("images/optionnotselected.png");
+		logger.writeEvent("Successfully loaded images");
 		title = new Texture("images/title.png");
 		preferences = Gdx.app.getPreferences("options");
+		logger.writeEvent("Menu Assessts loaded");
 	}
 
 	@Override
@@ -84,18 +79,22 @@ public class MenuState extends GameState {
 			currentItem+=2;
 			currentItem%=2;
 			isPlaySelected = !isPlaySelected;
+			logger.writeEvent("Down Clicked");
 		}
 		if (MyInput.isPressed(MyInput.BUTTON5)) {
 			currentItem++;
 			currentItem+=2;
 			currentItem%=2;
 			isPlaySelected = !isPlaySelected;
+			logger.writeEvent("Up Clicked");
 		}
 		if (MyInput.isPressed(MyInput.BUTTON6)) {
 			select();
+			logger.writeEvent("Enter Pressed");
 		}
 		if (MyInput.isPressed(MyInput.BUTTON7)) {
 			confirmExit();
+			logger.writeEvent("Escape Pressed");
 		}
 	}
 
@@ -143,13 +142,14 @@ public class MenuState extends GameState {
 	private void select() {
 		
 		if (currentItem == 0) {
+			logger.writeEvent("Loading Level Select");
 			gsm.pushState(GameStateManager.levelSelect, "");
 
 		} else if (currentItem == 1) {
 			final GDXDialogs dialogs = GDXDialogsSystem.install();
 			GDXButtonDialog bDialog = dialogs.newDialog(GDXButtonDialog.class);
 			bDialog.setTitle("Options");
-
+			logger.writeEvent("Loading Options");
 			bDialog.setClickListener(new ButtonClickListener() {
 
 				@Override
@@ -173,6 +173,7 @@ public class MenuState extends GameState {
 									if(vol > 100) {
 										vol = 100;
 									}
+									logger.writeEvent("BG Volume Changed");
 									preferences.putFloat("bg", vol/100f);
 									preferences.flush();
 								}catch(Exception exception) {
@@ -207,6 +208,7 @@ public class MenuState extends GameState {
 									if(vol > 100) {
 										vol = 100;
 									}
+									logger.writeEvent("SFX Volume Changed");
 									preferences.putFloat("sfx", vol/100f);
 									preferences.flush();
 								}catch(Exception exception) {
@@ -245,6 +247,7 @@ public class MenuState extends GameState {
 			@Override
 			public void click(int button) {
 				if (button == 1) {
+					logger.writeEvent("Gracefully exited game");
 					Gdx.app.exit();
 				}
 			}

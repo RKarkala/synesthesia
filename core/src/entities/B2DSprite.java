@@ -7,6 +7,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 
 import handlers.Animation;
 import handlers.B2DVars;
+import handlers.Logger;
 
 public class B2DSprite {
 	protected Body body;

@@ -19,6 +19,7 @@ public class MyContactListener implements ContactListener {
 	public int redContact;
 	public int yellowContact;
 	public int checkPoint;
+	Logger logger = new Logger();
 
 	@Override
 	public void beginContact(Contact contact) {
@@ -69,8 +70,7 @@ public class MyContactListener implements ContactListener {
 				checkPoint++;
 			}
 		}
-
-		System.out.println(fa.getUserData() + ", " + fb.getUserData());
+		//logger.writeEvent("Contact between" + fa.getUserData() + " and " + fb.getUserData() + " has started");
 	}
 
 	@Override
@@ -84,6 +84,7 @@ public class MyContactListener implements ContactListener {
 		if (fb.getUserData() != null && fb.getUserData().equals("foot")) {
 			numFootContacts--;
 		}
+		//logger.writeEvent("Contact between" + fa.getUserData() + " and " + fb.getUserData() + " has ended");
 	}
 
 	@Override
