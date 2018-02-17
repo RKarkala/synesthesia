@@ -17914,3 +17914,63 @@ Event at time 1518848926397 : On Checkpoint
 Event at time 1518848926445 : On Checkpoint
 Event at time 1518848926488 : On Checkpoint
 Event at time 1518848926515 : On Checkpoint
+Event at time 1518848988106 : Game has Begun
+Event at time 1518848988133 : TexturebluePlayer  has been loaded
+Event at time 1518848988140 : TexturegreenPlayer  has been loaded
+Event at time 1518848988148 : TextureorangePlayer  has been loaded
+Event at time 1518848988159 : TexturepurplePlayer  has been loaded
+Event at time 1518848988165 : TextureredPlayer  has been loaded
+Event at time 1518848988172 : TextureyellowPlayer  has been loaded
+Event at time 1518848988185 : Texturehud  has been loaded
+Event at time 1518848988195 : All static textures loaded
+Event at time 1518848988243 : Sprite Batch Created
+Event at time 1518848988253 : Main Camera Created
+Event at time 1518848988259 : Hud Camera Created
+Event at time 1518848988265 : State with id 0is being pushed
+Event at time 1518848988269 : Menu State Loaded
+Event at time 1518848988361 : Music Started
+Event at time 1518848988560 : Successfully loaded images
+Event at time 1518848988631 : Menu Assessts loaded
+Event at time 1518848988636 : Menu State Loaded
+Event at time 1518848988641 : Game State Manager Created
+Event at time 1518848988995 : Loading Level Select
+Event at time 1518848989007 : State with id 1is being pushed
+Event at time 1518848989015 : Level Select State State Loaded
+Event at time 1518848989582 : Level Select Sprites have been loaded
+Event at time 1518848989591 : Enter Pressed
+Event at time 1518848990537 : Down Clicked
+Event at time 1518848990851 : Down Clicked
+Event at time 1518848991237 : Enter Clicked
+Event at time 1518848991243 : Loading level: level5
+Event at time 1518848991251 : State with id 123is being pushed
+Event at time 1518848991262 : Play State Loaded (level5)
+Event at time 1518848991318 : Start Position Set
+Event at time 1518848991377 : Player Recreated with new texture
+Event at time 1518848991382 : Level assessts loaded
+Event at time 1518848991545 : Environment Created
+Event at time 1518848991555 : Pressure Plates Created
+Event at time 1518848991562 : Door Created
+Event at time 1518848991569 : Checkpoints Created
+Event at time 1518848991577 : Level is level5
+Event at time 1518848991581 : Texturehud  has been retrieved
+Event at time 1518848991586 : Hud Created
+Event at time 1518848991591 : Hud Created
+Event at time 1518848991605 : TextureyellowPlayer  has been retrieved
+Event at time 1518848991610 : Player texture set
+Event at time 1518848991614 : Switching to Yellow
+Event at time 1518848991619 : On Checkpoint
+Event at time 1518848992203 : TextureyellowPlayer  has been retrieved
+Event at time 1518848992213 : Player texture set
+Event at time 1518848992218 : Switching to Yellow
+Event at time 1518848992270 : TextureyellowPlayer  has been retrieved
+Event at time 1518848992280 : Player texture set
+Event at time 1518848992285 : Switching to Yellow
+Event at time 1518848992838 : On Checkpoint
+Event at time 1518848992862 : On Checkpoint
+Event at time 1518848992887 : On Checkpoint
+Event at time 1518848995587 : Loss of Life
+Event at time 1518848995597 : Player Recreated with new texture
+Event at time 1518848995606 : TextureyellowPlayer  has been retrieved
+Event at time 1518848995610 : Player texture set
+Event at time 1518848995614 : Switching to Yellow
+Event at time 1518848995620 : On Checkpoint
