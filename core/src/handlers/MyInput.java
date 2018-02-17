@@ -1,5 +1,8 @@
 package handlers;
 
+/*
+ * Creates framework for accepting user inputs
+ */
 public class MyInput {
 	
 	public static boolean[] keys;

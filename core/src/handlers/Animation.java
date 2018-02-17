@@ -1,7 +1,9 @@
 package handlers;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-
+/*
+ * Creates the framework to allow for the animation of the player with variable timing
+ */
 public class Animation {
 	private TextureRegion[] frames;
 	private float time;

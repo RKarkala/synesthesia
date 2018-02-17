@@ -1,8 +1,10 @@
 package handlers;
 
 public class B2DVars {
+	//Scale that makes 100 pixels equivalent to 1 meter
 	public static final float PPM = 100;
 	
+	//Sets bits for collision for all objets in the game
 	public static final short BIT_PLAYER = 2;
 	public static final short BIT_RED = 4;
 	public static final short BIT_ORANGE = 8;

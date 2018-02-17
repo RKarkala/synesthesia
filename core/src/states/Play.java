@@ -44,8 +44,10 @@ import main.Game;
 
 public class Play extends GameState {
 
+	// Variable that allows for colliders to be seen
 	private boolean debug = false;
 
+	// Instance variables to set up world
 	private World world;
 	private Box2DDebugRenderer b2dr;
 	private OrthographicCamera b2dcam;
@@ -56,7 +58,6 @@ public class Play extends GameState {
 	private int tileSize;
 	private Player player;
 	private final int maxSpeed = 5;
-
 
 	private float startX = 0;
 	private float startY = 0;
@@ -74,53 +75,63 @@ public class Play extends GameState {
 	Logger logger = new Logger();
 
 	public Play(GameStateManager gsm, String level) {
-
+		// Instantiate Play
 		super(gsm);
+
+		// Set up sfx settings
 		preferences = Gdx.app.getPreferences("options");
 		try {
 			sfxLevel = preferences.getFloat("sfx");
-		}catch(Exception e) {
+		} catch (Exception e) {
+			logger.writeError("Could not read preferences");
 			sfxLevel = .1f;
 		}
-		System.out.println("Play " + level);
+		// Set up world environment and gravity
 		world = new World(new Vector2(0, -9.81f), true);
 		cl = new MyContactListener();
 		world.setContactListener(cl);
 		b2dr = new Box2DDebugRenderer();
+
+		// Read file to determine starting location
 		FileHandle file = Gdx.files.internal("maps/" + level + ".txt");
 		String info = file.readString();
-		System.out.println(info);
 		String parts[] = info.split("\n");
-		System.out.println(Arrays.toString(parts));
 		if (first) {
 			startX = Float.parseFloat(parts[0]);
 			startY = Float.parseFloat(parts[1]);
-			if(startX != Float.parseFloat(parts[2])) {
+			if (startX != Float.parseFloat(parts[2])) {
 				startX = Float.parseFloat(parts[2]);
 				startY = Float.parseFloat(parts[3]);
 			}
 			first = false;
 		}
 		logger.writeEvent("Start Position Set");
+		// Load background image
 		background = new Texture("images/background.jpg");
 		background.setWrap(TextureWrap.Repeat, TextureWrap.Repeat);
 		this.level = level;
 
+		// Create player with an initial color of yellow
 		createPlayer(B2DVars.BIT_YELLOW, new Texture("images/playerImages/yellow.png"));
 		logger.writeEvent("Level assessts loaded");
+		// Create Tiles
 		createTiles();
 		logger.writeEvent("Environment Created");
+		// Create Pressure Plates
 		createPlates();
 		logger.writeEvent("Pressure Plates Created");
+		// Create level endings
 		createDoor();
 		logger.writeEvent("Door Created");
+		// Create checkpoints
 		createCheckpoints();
 		logger.writeEvent("Checkpoints Created");
-
+		// Setup main Camera
 		b2dcam = new OrthographicCamera();
 		b2dcam.setToOrtho(false, Game.width / PPM, Game.height / PPM);
 
 		logger.writeEvent("Level is " + this.level);
+		// Create HUD
 		hud = new HUD(player);
 		logger.writeEvent("Hud Created");
 
@@ -128,7 +139,7 @@ public class Play extends GameState {
 
 	@Override
 	public void handleInput() {
-		// TODO Auto-generated method stub
+		// Applies an upward force when the up arrow is pressed
 		if (MyInput.isPressed(MyInput.BUTTON3)) {
 			if (cl.isPlayerOnGround()) {
 				Sound sound = Gdx.audio.newSound(Gdx.files.internal("sfx/jump.wav"));
@@ -138,18 +149,19 @@ public class Play extends GameState {
 
 			}
 		}
+		// Applies a leftward force when the left arrow is pressed
 		if (MyInput.isDown(MyInput.BUTTON1) && Math.abs(player.getBody().getLinearVelocity().x) < maxSpeed) {
 			player.getBody().applyForceToCenter(new Vector2(-6, 0), true);
 			logger.writeEvent("Player Moving Left");
-		
 
 		}
+		// Applies a rightward force when the right arrow is pressed
 		if (MyInput.isDown(MyInput.BUTTON2) && Math.abs(player.getBody().getLinearVelocity().x) < maxSpeed) {
 			player.getBody().applyForceToCenter(new Vector2(6, 0), true);
 			logger.writeEvent("Player Moving Right");
-		
 
 		}
+		// Asks user whether they want to exit when escape is pressed
 		if (MyInput.isPressed(MyInput.BUTTON7)) {
 			isPaused = true;
 			logger.writeEvent("Game Paused");
@@ -181,7 +193,7 @@ public class Play extends GameState {
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		handleInput();
-
+		// Changes to blue if blue pressure plate is hit
 		if (cl.touchedBlue()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
@@ -189,6 +201,7 @@ public class Play extends GameState {
 			switchBlocks(cur, to, "bluePlayer");
 			cl.blueContact = 0;
 			logger.writeEvent("Switching to Blue");
+			// Changes to green if green pressure plate is hit
 		} else if (cl.touchedGreen()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
@@ -196,6 +209,7 @@ public class Play extends GameState {
 			switchBlocks(cur, to, "greenPlayer");
 			cl.greenContact = 0;
 			logger.writeEvent("Switching to Green");
+			// Changes to orange if orange pressure plate is hit
 		} else if (cl.touchedOrange()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
@@ -203,6 +217,7 @@ public class Play extends GameState {
 			switchBlocks(cur, to, "orangePlayer");
 			logger.writeEvent("Switching to Orange");
 			cl.orangeContact = 0;
+			// Changes to purple if purple pressure plate is hit
 		} else if (cl.touchedPurple()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
@@ -210,12 +225,15 @@ public class Play extends GameState {
 			switchBlocks(cur, to, "purplePlayer");
 			logger.writeEvent("Switching to Purple");
 			cl.purpleContact = 0;
+			// Changes to red if red pressure plate is hit
 		} else if (cl.touchedRed()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
 			short to = B2DVars.BIT_RED;
+			switchBlocks(cur, to, "purplePlayer");
 			logger.writeEvent("Switching to Red");
 			cl.redContact = 0;
+			/// Changes to yellow if yellow pressure plate is hit
 		} else if (cl.touchedYellow()) {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
@@ -224,6 +242,7 @@ public class Play extends GameState {
 			logger.writeEvent("Switching to Yellow");
 			cl.yellowContact = 0;
 		}
+		//Sets respawn point to location of checkpoint if checkpoint is touched
 		if (cl.onCheckpoint()) {
 			logger.writeEvent("On Checkpoint");
 			float x = player.getBody().getPosition().x;
@@ -238,9 +257,11 @@ public class Play extends GameState {
 			handle.writeString(orix + "\n" + oriy + "\n" + x + "\n" + y, false);
 			cl.checkPoint = 0;
 		}
+		//Halts updates if game is paused
 		if (!isPaused) {
 			world.step(dt, 8, 3);
 		}
+		//Moves user to next level
 		if (cl.isOver()) {
 			logger.writeEvent("Level Over");
 			FileHandle handle = Gdx.files.local("maps/" + level + ".txt");
@@ -252,21 +273,21 @@ public class Play extends GameState {
 			cl.doorContacts = 0;
 			handle = Gdx.files.local("allowed.txt");
 			if (!level.contains("5")) {
-				
-				if(level.contains("tutorial")){
+
+				if (level.contains("tutorial")) {
 					handle.writeString("level1", true);
 					gsm.setState(GameStateManager.play, "level1");
-				}else {
+				} else {
 					int l = Integer.parseInt(level.substring(level.length() - 1));
 					handle.writeString(level.substring(0, level.length() - 1) + (l + 1), true);
 					gsm.setState(GameStateManager.play, level.substring(0, level.length() - 1) + (l + 1));
 				}
-				
-				
-			}else {
+
+			} else {
 				gsm.setState(GameStateManager.end, "");
 			}
 		}
+		//Removes a life if user falls off screen
 		if (player.getBody().getPosition().y < -3) {
 			logger.writeEvent("Loss of Life");
 			lives--;
@@ -285,6 +306,7 @@ public class Play extends GameState {
 				createPlayer(player.getBody().getFixtureList().first().getFilterData().maskBits, player.getTexture());
 			}
 		}
+		//Restarts level if lives are at 0
 		if (lives == 0) {
 			logger.writeEvent("0 lives left");
 			FileHandle handle = Gdx.files.local("maps/" + level + ".txt");
@@ -295,15 +317,14 @@ public class Play extends GameState {
 			gsm.setState(GameStateManager.play, level);
 		}
 
-
-
 	}
 
+	//Renders game updates
 	@Override
 	public void render() {
 		try {
 			sfxLevel = preferences.getFloat("sfx");
-		}catch(Exception e) {
+		} catch (Exception e) {
 			sfxLevel = .1f;
 		}
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
@@ -330,7 +351,7 @@ public class Play extends GameState {
 		} else {
 			hud.renderNone(sb);
 		}
-		// TODO Auto-generated method stub
+		
 		if (debug)
 			b2dr.render(world, b2dcam.combined);
 
@@ -338,7 +359,7 @@ public class Play extends GameState {
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
+		
 
 	}
 
@@ -346,19 +367,21 @@ public class Play extends GameState {
 		BodyDef bdef = new BodyDef();
 		FixtureDef fdef = new FixtureDef();
 		PolygonShape shape = new PolygonShape();
-		// Player
+		// Creates Player Colider
 		bdef.position.set(startX / PPM, startY / PPM);
 		bdef.type = BodyType.DynamicBody;
 		Body body = world.createBody(bdef);
 		shape.setAsBox(15 / PPM, 15 / PPM);
 		fdef.shape = shape;
+		//Sets category and mask bits for collisions
 		fdef.filter.categoryBits = B2DVars.BIT_PLAYER;
 		fdef.filter.maskBits = (short) (bits | 1);
 		body.createFixture(fdef).setUserData("Box");
 
-		// Foot Sensor
+		// Creates Foot Sensor
 		shape.setAsBox(13 / PPM, 2 / PPM, new Vector2(0, -15 / PPM), 0);
 		fdef.shape = shape;
+		//Sets category and mask bits for collisions
 		fdef.filter.categoryBits = B2DVars.BIT_PLAYER;
 		fdef.filter.maskBits = (short) (bits | 1);
 		fdef.isSensor = true;
@@ -367,7 +390,7 @@ public class Play extends GameState {
 		player = new Player(body, tex);
 		body.setUserData(player);
 	}
-
+	//Creates environment by reading each layer and creating coliders
 	public void createTiles() {
 		System.out.println("Path to File - maps/" + level + ".tmx");
 		tileMap = new TmxMapLoader().load("maps/" + level + ".tmx");
@@ -390,7 +413,7 @@ public class Play extends GameState {
 		layer = (TiledMapTileLayer) tileMap.getLayers().get("blue");
 		createLayer(layer, B2DVars.BIT_BLUE);
 	}
-
+	//Loops through all blocks in a layer and sets colliders and positions
 	public void createLayer(TiledMapTileLayer layer, short bits) {
 		System.out.println(bits);
 		BodyDef bdef = new BodyDef();
@@ -403,6 +426,7 @@ public class Play extends GameState {
 				}
 				bdef.type = BodyType.StaticBody;
 				bdef.position.set((col + 0.5f) * tileSize / PPM, (row + 0.5f) * tileSize / PPM);
+				//Sets the boundaries of each object for the colider
 				ChainShape cs = new ChainShape();
 				Vector2[] v = new Vector2[5];
 				v[0] = new Vector2(-tileSize / 2 / PPM, -tileSize / 2 / PPM);
@@ -411,6 +435,7 @@ public class Play extends GameState {
 				v[3] = new Vector2(tileSize / 2 / PPM, -tileSize / 2 / PPM);
 				v[4] = new Vector2(-tileSize / 2 / PPM, -tileSize / 2 / PPM);
 				cs.createChain(v);
+				//Sets category and mask bits for collisions
 				fdef.shape = cs;
 				fdef.filter.categoryBits = bits;
 				fdef.filter.maskBits = B2DVars.BIT_PLAYER | 1;
@@ -422,7 +447,7 @@ public class Play extends GameState {
 			}
 		}
 	}
-
+	//Creates the level end door 
 	public void createDoor() {
 		TiledMapTileLayer layer = (TiledMapTileLayer) tileMap.getLayers().get("door");
 		BodyDef bdef = new BodyDef();
@@ -449,7 +474,7 @@ public class Play extends GameState {
 			}
 		}
 	}
-
+	//Switches the users mask and category bits based on pressureplate
 	private void switchBlocks(short current, short change, String texture) {
 		Filter filter = player.getBody().getFixtureList().first().getFilterData();
 		short bits = filter.maskBits;
@@ -463,7 +488,7 @@ public class Play extends GameState {
 		player.getBody().getFixtureList().first().setFilterData(filter);
 		player.getBody().getFixtureList().get(1).setFilterData(filter);
 	}
-
+	//Creates pressure plates using the logic from the tiels
 	public void createPlates() {
 		String[] plates = new String[] { "blueplate", "greenplate", "orangeplate", "purpleplate", "redplate",
 				"yellowplate" };
@@ -495,7 +520,7 @@ public class Play extends GameState {
 			}
 		}
 	}
-
+	//Creates checkpoints using same logic as tiles
 	public void createCheckpoints() {
 		TiledMapTileLayer layer = (TiledMapTileLayer) tileMap.getLayers().get("checkpoint");
 

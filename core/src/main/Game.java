@@ -1,21 +1,24 @@
 package main;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.lang.Thread.UncaughtExceptionHandler;
+import java.net.URI;
+
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.PerspectiveCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import handlers.Content;
 import handlers.GameStateManager;
+import handlers.Logger;
 import handlers.MyInput;
 import handlers.MyInputProcessor;
-import handlers.Logger;
 
-public class Game extends ApplicationAdapter {
+public class Game extends ApplicationAdapter implements UncaughtExceptionHandler{
 
-	
+	//Sets up Instance Variables
 	public static final String title = "Synesthesia";
 	public static final int width = 1920;
 	public static final int height = 1080;
@@ -45,7 +48,7 @@ public class Game extends ApplicationAdapter {
 	public OrthographicCamera getHudCamera() {
 		return hudCamera;
 	}
-	
+	//Sets up game by loadings assests
 	@Override
 	public void create () {
 		logger.writeEvent("Game has Begun");
@@ -91,6 +94,21 @@ public class Game extends ApplicationAdapter {
 	}
 	@Override
 	public void dispose () {
+		
+	}
+
+	//Catches any game breaking error, logs it, and opens an email to report the bug
+	@Override
+	public void uncaughtException(Thread t, Throwable e) {
+		logger.writeError("Uncaught Exception" + e.getMessage());
+		Desktop desktop = Desktop.getDesktop();
+        String message = "mailto:rkarkala10@gmail.com?subject=fatalError&body="+e.getMessage();
+        URI uri = URI.create(message);
+        try {
+			desktop.mail(uri);
+		} catch (IOException e1) {
+			logger.writeError("Error Sending Email, manually send to rkarkala10@gmail.com");
+		}
 		
 	}
 }

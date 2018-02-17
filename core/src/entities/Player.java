@@ -6,10 +6,11 @@ import com.badlogic.gdx.physics.box2d.Body;
 
 import handlers.Logger;
 import main.Game;
-
+/*
+ * Player Class with the ability to set and get textures in
+ * order to change based off pressure plates
+ */
 public class Player extends B2DSprite {
-	private int numCrystals;
-	private int totalCrystals;
 	private Texture tex;
 	Logger logger = new Logger();
 

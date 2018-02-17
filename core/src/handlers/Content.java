@@ -4,7 +4,9 @@ import java.util.HashMap;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-
+/*
+ * Provides the framework for loading and setting textures
+ */
 public class Content {
 	
 	private HashMap<String, Texture> textures;

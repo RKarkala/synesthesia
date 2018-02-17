@@ -5,7 +5,10 @@ import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
-
+/*
+ * Gets all information related to contacts. Whenever the user
+ * comes in contact with an object the method is fired and updated
+ */
 public class MyContactListener implements ContactListener {
 
 	public int numFootContacts;
@@ -23,7 +26,6 @@ public class MyContactListener implements ContactListener {
 
 	@Override
 	public void beginContact(Contact contact) {
-		// TODO Auto-generated method stub
 		Fixture fa = contact.getFixtureA();
 		Fixture fb = contact.getFixtureB();
 		if (fa.getUserData() != null) {
@@ -70,12 +72,10 @@ public class MyContactListener implements ContactListener {
 				checkPoint++;
 			}
 		}
-		//logger.writeEvent("Contact between" + fa.getUserData() + " and " + fb.getUserData() + " has started");
 	}
 
 	@Override
 	public void endContact(Contact contact) {
-		// TODO Auto-generated method stub
 		Fixture fa = contact.getFixtureA();
 		Fixture fb = contact.getFixtureB();
 		if (fa.getUserData() != null && fa.getUserData().equals("foot")) {
@@ -84,18 +84,17 @@ public class MyContactListener implements ContactListener {
 		if (fb.getUserData() != null && fb.getUserData().equals("foot")) {
 			numFootContacts--;
 		}
-		//logger.writeEvent("Contact between" + fa.getUserData() + " and " + fb.getUserData() + " has ended");
 	}
 
 	@Override
 	public void preSolve(Contact contact, Manifold oldManifold) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void postSolve(Contact contact, ContactImpulse impulse) {
-		// TODO Auto-generated method stub
+		
 
 	}
 

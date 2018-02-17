@@ -3,7 +3,9 @@ package handlers;
 import java.io.File;
 
 import com.badlogic.gdx.files.FileHandle;
-
+/*
+ * Class to provide easy logging for system events and errors
+ */
 public class Logger {
 	FileHandle errorHandler;
 	FileHandle eventHandler;

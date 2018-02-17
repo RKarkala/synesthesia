@@ -23,12 +23,11 @@ import main.Game;
 
 public class MenuState extends GameState {
 
+	//Instance Variables
 	private SpriteBatch sb;
 	private BitmapFont titleFont;
 	private BitmapFont font;
 	Logger logger = new Logger();
-
-	// private final String title = "Synesthesia";
 
 	private int currentItem;
 
@@ -46,9 +45,10 @@ public class MenuState extends GameState {
 
 	public MenuState(GameStateManager gsm) {
 		super(gsm);
+		//Load Background Music
 		backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("music/background.ogg"));
 		backgroundMusic.setLooping(true);
-		
+		//Set volume based on user settings
 		try {
 			musicVolume = preferences.getFloat("bg");
 		}catch(Exception e) {
@@ -58,6 +58,7 @@ public class MenuState extends GameState {
 		backgroundMusic.play();
 		logger.writeEvent("Music Started");
 
+		//Create and load all assessts
 		sb = new SpriteBatch();
 		logger = new Logger();
 		background = new Texture("images/background.jpg");
@@ -71,6 +72,7 @@ public class MenuState extends GameState {
 		logger.writeEvent("Menu Assessts loaded");
 	}
 
+	//Handle keyboard movements on menu screen
 	@Override
 	public void handleInput() {
 		// TODO Auto-generated method stub
@@ -100,10 +102,10 @@ public class MenuState extends GameState {
 
 	@Override
 	public void update(float dt) {
-		// TODO Auto-generated method stub
 		handleInput();
 	}
 
+	//Draws assests
 	@Override
 	public void render() {
 		int width = Game.width * Game.scale;
@@ -138,7 +140,7 @@ public class MenuState extends GameState {
 		// TODO Auto-generated method stub
 
 	}
-
+	//Allows user to set sfx and background volume
 	private void select() {
 		
 		if (currentItem == 0) {
@@ -234,7 +236,7 @@ public class MenuState extends GameState {
 			
 		}
 	}
-
+	//Confirms that user wants to exit
 	private void confirmExit() {
 		GDXDialogs dialogs = GDXDialogsSystem.install();
 		GDXButtonDialog bDialog = dialogs.newDialog(GDXButtonDialog.class);

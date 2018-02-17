@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import handlers.GameStateManager;
 import main.Game;
 
+//Provides framework for all other states
 public abstract class GameState {
 	protected GameStateManager gsm;
 	protected Game game;

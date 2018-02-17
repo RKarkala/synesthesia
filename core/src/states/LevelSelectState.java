@@ -17,6 +17,7 @@ import handlers.Logger;
 import handlers.MyInput;
 
 public class LevelSelectState extends GameState {
+	//Instance Variables
 	private SpriteBatch sb;
 	private BitmapFont titleFont;
 	private BitmapFont font;
@@ -47,6 +48,7 @@ public class LevelSelectState extends GameState {
 
 	public LevelSelectState(GameStateManager gsm) {
 		super(gsm);
+		//Create and load all assets for level select
 		sb = new SpriteBatch();
 		font = new BitmapFont();
 		tutorialPressed = new Texture("images/levelSelectImages/tutorialpressed.png");
@@ -71,7 +73,8 @@ public class LevelSelectState extends GameState {
 		logger.writeEvent("Level Select Sprites have been loaded");
 
 	}
-
+	
+	//Allows user to move through menu
 	@Override
 	public void handleInput() {
 		if (MyInput.isPressed(MyInput.BUTTON3)) {
@@ -99,13 +102,12 @@ public class LevelSelectState extends GameState {
 
 	@Override
 	public void update(float dt) {
-		// TODO Auto-generated method stub
 		handleInput();
 	}
 
+	//Draws Sprites
 	@Override
 	public void render() {
-		// Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		GlyphLayout gl = new GlyphLayout();
 		sb.begin();
@@ -149,10 +151,10 @@ public class LevelSelectState extends GameState {
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
+		
 
 	}
-
+	//Selects item user presses
 	private void select() {
 		String target = "";
 		boolean isLevel = false;

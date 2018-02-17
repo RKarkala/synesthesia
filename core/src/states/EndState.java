@@ -11,6 +11,9 @@ import handlers.Logger;
 import handlers.MyInput;
 import main.Game;
 
+/*
+ * Displays end credit scene after user wins and returns to main menu on press of enter
+ */
 public class EndState extends GameState {
 
 	private SpriteBatch sb;
@@ -18,18 +21,18 @@ public class EndState extends GameState {
 
 	private Texture background;
 	private Texture endText;
+
 	public EndState(GameStateManager gsm) {
 		super(gsm);
 		logger.writeEvent("USER HAS WON GAME!!!!!!!!!!!");
 		sb = new SpriteBatch();
 		background = new Texture("images/background.jpg");
 		endText = new Texture("images/end.png");
-	
+
 	}
 
 	@Override
 	public void handleInput() {
-		// TODO Auto-generated method stub
 		if (MyInput.isPressed(MyInput.BUTTON6)) {
 			logger.writeEvent("Returning to Main Screen");
 			gsm.popState();
@@ -39,31 +42,25 @@ public class EndState extends GameState {
 
 	@Override
 	public void update(float dt) {
-		// TODO Auto-generated method stub
 		handleInput();
 	}
 
 	@Override
 	public void render() {
-		int width = Game.width * Game.scale;
-		int height = Game.height * Game.scale;
+
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		GlyphLayout gl = new GlyphLayout();
 		sb.begin();
 		sb.draw(background, 0, 0);
 		sb.draw(endText, 0, 0);
-		
 		sb.end();
 
 	}
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
 
 	}
-
-
 
 }

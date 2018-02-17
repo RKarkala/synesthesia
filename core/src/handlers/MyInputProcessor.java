@@ -3,6 +3,9 @@ package handlers;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputAdapter;
 
+/*
+ * Sets keyDown and keyUp events for all keys needed for the game
+ */
 public class MyInputProcessor extends InputAdapter{
 	
 	public boolean keyDown(int k) {

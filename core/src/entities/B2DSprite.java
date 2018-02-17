@@ -1,5 +1,6 @@
 package entities;
 
+
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
@@ -9,6 +10,9 @@ import handlers.Animation;
 import handlers.B2DVars;
 import handlers.Logger;
 
+/*
+ * Provides the outline for animation on a sprite 
+ */
 public class B2DSprite {
 	protected Body body;
 	protected Animation animation;

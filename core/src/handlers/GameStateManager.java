@@ -8,7 +8,9 @@ import states.GameState;
 import states.LevelSelectState;
 import states.MenuState;
 import states.Play;
-
+/*
+ * Creates framework for loading gamestates as well as setting game states
+ */
 public class GameStateManager {
 	private Game game;
 	
@@ -39,6 +41,7 @@ public class GameStateManager {
 		gameStates.peek().render();
 		
 	}
+	//Gets the current state
 	private GameState getState(int state, String level) {
 		if(state == play) {
 			logger.writeEvent("Play State Loaded ("+  level + ")" );
@@ -67,6 +70,7 @@ public class GameStateManager {
 		logger.writeEvent( "State with id " + state +"is being pushed");
 		gameStates.push(getState(state, level));
 	}
+	//Removes the current state from the stack
 	public void popState() {
 		GameState g = gameStates.pop();
 		logger.writeEvent("Previous State Removed");

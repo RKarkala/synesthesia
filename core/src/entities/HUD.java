@@ -7,7 +7,9 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import handlers.B2DVars;
 import handlers.Logger;
 import main.Game;
-
+/*
+ * Provides the HUD with seperate methods corresponding to each number of lives
+ */
 public class HUD {
 	private Player player;
 	private TextureRegion heart;
