@@ -152,13 +152,10 @@ public class Play extends GameState {
 		// Applies a leftward force when the left arrow is pressed
 		if (MyInput.isDown(MyInput.BUTTON1) && Math.abs(player.getBody().getLinearVelocity().x) < maxSpeed) {
 			player.getBody().applyForceToCenter(new Vector2(-6, 0), true);
-			logger.writeEvent("Player Moving Left");
-
 		}
 		// Applies a rightward force when the right arrow is pressed
 		if (MyInput.isDown(MyInput.BUTTON2) && Math.abs(player.getBody().getLinearVelocity().x) < maxSpeed) {
-			player.getBody().applyForceToCenter(new Vector2(6, 0), true);
-			logger.writeEvent("Player Moving Right");
+			player.getBody().applyForceToCenter(new Vector2(6, 0), true);;
 
 		}
 		// Asks user whether they want to exit when escape is pressed
@@ -230,7 +227,7 @@ public class Play extends GameState {
 			Filter filter = player.getBody().getFixtureList().first().getFilterData();
 			short cur = filter.maskBits;
 			short to = B2DVars.BIT_RED;
-			switchBlocks(cur, to, "purplePlayer");
+			switchBlocks(cur, to, "redPlayer");
 			logger.writeEvent("Switching to Red");
 			cl.redContact = 0;
 			/// Changes to yellow if yellow pressure plate is hit
