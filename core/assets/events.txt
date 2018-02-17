@@ -17596,3 +17596,59 @@ Event at time 1518847435474 : Player Moving Right
 Event at time 1518847435479 : Player Moving Right
 Event at time 1518847435490 : Player Moving Right
 Event at time 1518847435495 : Player Moving Right
+Event at time 1518847556035 : Game has Begun
+Event at time 1518847556050 : TexturebluePlayer  has been loaded
+Event at time 1518847556054 : TexturegreenPlayer  has been loaded
+Event at time 1518847556059 : TextureorangePlayer  has been loaded
+Event at time 1518847556064 : TexturepurplePlayer  has been loaded
+Event at time 1518847556069 : TextureredPlayer  has been loaded
+Event at time 1518847556073 : TextureyellowPlayer  has been loaded
+Event at time 1518847556079 : Texturehud  has been loaded
+Event at time 1518847556083 : All static textures loaded
+Event at time 1518847556110 : Sprite Batch Created
+Event at time 1518847556117 : Main Camera Created
+Event at time 1518847556121 : Hud Camera Created
+Event at time 1518847556128 : State with id 0is being pushed
+Event at time 1518847556131 : Menu State Loaded
+Event at time 1518847556211 : Music Started
+Event at time 1518847556401 : Successfully loaded images
+Event at time 1518847556465 : Menu Assessts loaded
+Event at time 1518847556470 : Menu State Loaded
+Event at time 1518847556473 : Game State Manager Created
+Event at time 1518847556724 : Loading Level Select
+Event at time 1518847556731 : State with id 1is being pushed
+Event at time 1518847556737 : Level Select State State Loaded
+Event at time 1518847557203 : Level Select Sprites have been loaded
+Event at time 1518847557208 : Enter Pressed
+Event at time 1518847558234 : Enter Clicked
+Event at time 1518847558239 : Loading level: tutorial
+Event at time 1518847558243 : State with id 123is being pushed
+Event at time 1518847558248 : Play State Loaded (tutorial)
+Event at time 1518847558282 : Start Position Set
+Event at time 1518847558326 : Player Recreated with new texture
+Event at time 1518847558330 : Level assessts loaded
+Event at time 1518847558448 : Environment Created
+Event at time 1518847558690 : Pressure Plates Created
+Event at time 1518847558697 : Door Created
+Event at time 1518847558704 : Checkpoints Created
+Event at time 1518847558711 : Level is tutorial
+Event at time 1518847558719 : Texturehud  has been retrieved
+Event at time 1518847558723 : Hud Created
+Event at time 1518847558729 : Hud Created
+Event at time 1518847561183 : Player Jumped
+Event at time 1518847562514 : Player Jumped
+Event at time 1518847563580 : TextureredPlayer  has been retrieved
+Event at time 1518847563591 : Player texture set
+Event at time 1518847563600 : Switching to Red
+Event at time 1518847563612 : TextureredPlayer  has been retrieved
+Event at time 1518847563617 : Player texture set
+Event at time 1518847563622 : Switching to Red
+Event at time 1518847563662 : Player Jumped
+Event at time 1518847563678 : TextureredPlayer  has been retrieved
+Event at time 1518847563683 : Player texture set
+Event at time 1518847563688 : Switching to Red
+Event at time 1518847564848 : Player Jumped
+Event at time 1518847569736 : Player Jumped
+Event at time 1518847570969 : Player Jumped
+Event at time 1518847572519 : Player Jumped
+Event at time 1518847573736 : Player Jumped
